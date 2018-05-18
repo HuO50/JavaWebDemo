@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ManageHomeServlet</servlet-name>
+		<servlet-class>com.servlet.ManageHomeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsManageServlet</servlet-name>
+		<servlet-class>com.servlet.NewsManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsReleaseServlet</servlet-name>
+		<servlet-class>com.servlet.NewsReleaseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<servlet-class>com.servlet.WelcomeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberManageServlet</servlet-name>
+		<servlet-class>com.servlet.MemberManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberAddServlet</servlet-name>
+		<servlet-class>com.servlet.MemberAddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberAddResultServlet</servlet-name>
+		<servlet-class>com.servlet.MemberAddResultServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsReleaseResultServlet</servlet-name>
+		<servlet-class>com.servlet.NewsReleaseResultServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsDetailServlet</servlet-name>
+		<servlet-class>com.servlet.NewsDetailServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsDeleteServlet</servlet-name>
+		<servlet-class>com.servlet.NewsDeleteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsDetailResultServlet</servlet-name>
+		<servlet-class>com.servlet.NewsDetailResultServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsModifyServlet</servlet-name>
+		<servlet-class>com.servlet.NewsModifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>NewsModifyResultServlet</servlet-name>
+		<servlet-class>com.servlet.NewsModifyResultServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LoginverificationServlet</servlet-name>
+		<servlet-class>com.servlet.LoginverificationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberJurisdictionServlet</servlet-name>
+		<servlet-class>com.servlet.MemberJurisdictionServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberJurResultServlet</servlet-name>
+		<servlet-class>com.servlet.MemberJurResultServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberModifyServlet</servlet-name>
+		<servlet-class>com.servlet.MemberModifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MemberModifyResultServlet</servlet-name>
+		<servlet-class>com.servlet.MemberModifyResultServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ResearchNewsServlet</servlet-name>
+		<servlet-class>com.servlet.ResearchNewsServlet</servlet-class>
+	</servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ManageHomeServlet</servlet-name>
+		<url-pattern>/ManageHome</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsManageServlet</servlet-name>
+		<url-pattern>/NewsManage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsReleaseServlet</servlet-name>
+		<url-pattern>/NewsRelease</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<url-pattern>/Welcome</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberManageServlet</servlet-name>
+		<url-pattern>/MemberManage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberAddServlet</servlet-name>
+		<url-pattern>/MemberAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberAddResultServlet</servlet-name>
+		<url-pattern>/MemberAddResult</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsReleaseResultServlet</servlet-name>
+		<url-pattern>/NewsReleaseResult</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsDetailServlet</servlet-name>
+		<url-pattern>/NewsDetail</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsDeleteServlet</servlet-name>
+		<url-pattern>/NewsDelete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsDetailResultServlet</servlet-name>
+		<url-pattern>/NewsDetailResult</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsModifyServlet</servlet-name>
+		<url-pattern>/NewsModify</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsModifyResultServlet</servlet-name>
+		<url-pattern>/NewsModifyResult</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginverificationServlet</servlet-name>
+		<url-pattern>/LoginVerification</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberJurisdictionServlet</servlet-name>
+		<url-pattern>/MemberJurisdiction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberJurResultServlet</servlet-name>
+		<url-pattern>/MemberJurResult</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberModifyServlet</servlet-name>
+		<url-pattern>/MemberModify</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberModifyResultServlet</servlet-name>
+		<url-pattern>/MemberModifyResult</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ResearchNewsServlet</servlet-name>
+		<url-pattern>/ResearchNews</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>Login</welcome-file>
+	</welcome-file-list>
+
+	<!-- 配置登陆过滤器 -->
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.filter.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

@@ -1,0 +1,73 @@
+.newsdisp {
+	padding: 20px 40px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.newsdisp h1.newsdisp_title {
+	color: #0899cb;
+	font: normal 25px/50px "microsoft YaHei";
+	margin-bottom: 15px;
+}
+
+.newsdisp .time_author_click {
+	width: 100%;
+	height: 50px;
+	background: #f1f1f1
+}
+
+.newsdisp .time_author_click span {
+	color: #707070;
+	font: normal 14px/50px "microsoft YaHei";
+	margin: 0px 10px;
+}
+
+.newsdisp .newsdisp_con {
+	color: #666666;
+	font: normal 14px/30px "microsoft YaHei";
+	margin: 30px;
+	text-align: left;
+	height: auto !important;
+	height: 300px;
+	min-height: 300px;
+}
+
+.newsdisp .newsdisp_con p {
+	color: #666;
+	font: normal 14px/30px "microsoft YaHei";
+	text-indent: 2em;
+	margin-bottom: 10px;
+}
+
+.newsdisp .newsdisp_buttom {
+	margin: 20px auto;
+	text-align: center;
+	overflow: hidden;
+}
+
+.newsdisp .newsdisp_buttom a {
+	width: 68px;
+	height: 31px;
+	display: inline-block;
+	background: #b9b9b9;
+	color: #fff;
+	font: normal 14px/31px "microsoft YaHei";
+	margin: 0px 5px;
+	text-decoration: none
+}
+
+.newsdisp .newsdisp_buttom a:hover {
+	background: #0899cb
+}
+
+.main_box {
+	width: 60%;
+	height: auto;
+	float: right;
+	background: #fff;
+	border-top: 0px none;
+	-webkit-box-shadow: #c6c6c6 0px 2px 4px;
+	-moz-box-shadow: #c6c6c6 0px 2px 4px;
+	box-shadow: #c6c6c6 0px 2px 4px;
+	padding: 15px
+}

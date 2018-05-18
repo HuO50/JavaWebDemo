@@ -1,0 +1,160 @@
+package com.dao.impl;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.dao.INewsDao;
+import com.model.News;
+import com.mysql.jdbc.util.ResultSetUtil;
+import com.util.DBUtil;
+import com.util.GetNowDateUtil;
+
+public class NewsDao implements INewsDao{
+
+	@Override
+	public List<News> getallNews() {
+		// TODO Auto-generated method stub
+		Connection connection = DBUtil.getConnection();
+		String sql = "select * from news";		
+		List<News> list = new ArrayList<News>();
+ 		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = pStatement.executeQuery();
+			while (resultSet.next()) {
+				News news = new News();
+				news.setId(resultSet.getInt("id"));
+				news.setTitle(resultSet.getString("title"));
+				news.setAuthor(resultSet.getString("author"));
+				news.setTime(resultSet.getDate("time"));
+				news.setContent(resultSet.getString("content"));
+				news.setMark(resultSet.getString("mark"));
+				list.add(news);
+			}
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return list;
+	}
+
+	@Override
+	public News getNews(int id) {
+		// TODO Auto-generated method stub
+		News news = new News();
+		Connection connection = DBUtil.getConnection();
+		String sql = "select * from news where id = " + id;
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = pStatement.executeQuery();
+			while (resultSet.next()) {	
+				news.setId(resultSet.getInt("id"));
+				news.setTitle(resultSet.getString("title"));
+				news.setAuthor(resultSet.getString("author"));
+				news.setTime(resultSet.getDate("time"));
+				news.setContent(resultSet.getString("content"));
+				news.setMark(resultSet.getString("mark"));
+			}
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return news;
+	}
+
+	@Override
+	public boolean addNews(News news) {
+		// TODO Auto-generated method stub
+		boolean b = false;
+		Connection connection = DBUtil.getConnection();
+		String sql = "insert into news (title,author,time,content,mark)values(?,?,?,?,?)";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			pStatement.setString(1, news.getTitle());
+			pStatement.setString(2, news.getAuthor());
+			pStatement.setDate(3, news.getTime());
+			pStatement.setString(4, news.getContent());
+			pStatement.setString(5, news.getMark());
+			pStatement.executeUpdate();
+			connection.close();
+			b = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return b;
+	}
+
+	@Override
+	public boolean modifyNews(int id, News news){
+		// TODO Auto-generated method stub
+		boolean result = false;
+		Connection connection = DBUtil.getConnection();
+		String sql = "update news set title=?, author=?, content=?, mark=? where id = ?";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			pStatement.setString(1, news.getTitle());
+			pStatement.setString(2, news.getAuthor());
+			pStatement.setString(3, news.getContent());
+			pStatement.setString(4, news.getMark());
+			pStatement.setInt(5, id);
+			pStatement.executeUpdate();
+			connection.close();
+			result = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public boolean deleteNews(int id) {
+		// TODO Auto-generated method stub
+		boolean b = false;
+		Connection connection = DBUtil.getConnection();
+		String sql = "delete from news where id = '" + id + "'";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			pStatement.executeUpdate();
+			connection.close();
+			b = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return b;
+	}
+	
+	@Override
+	public List<News> getKindNews(String mark) {
+		List<News> list = new ArrayList<News>();
+		Connection connection = DBUtil.getConnection();
+		String sql = "select * from news where mark = '"+ mark + "'?";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = pStatement.executeQuery();
+			while (resultSet.next()) {
+				News news = new News();
+				news.setId(resultSet.getInt("id"));
+				news.setTitle(resultSet.getString("title"));
+				news.setAuthor(resultSet.getString("author"));
+				news.setTime(resultSet.getDate("time"));
+				news.setContent(resultSet.getString("content"));
+				news.setMark(resultSet.getString("mark"));
+				list.add(news);
+			}
+			connection.close();
+		} catch (Exception e) {
+			
+		}
+		return list;
+	}
+
+}
