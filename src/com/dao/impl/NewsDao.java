@@ -1,7 +1,6 @@
 package com.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,9 +9,7 @@ import java.util.List;
 
 import com.dao.INewsDao;
 import com.model.News;
-import com.mysql.jdbc.util.ResultSetUtil;
 import com.util.DBUtil;
-import com.util.GetNowDateUtil;
 
 public class NewsDao implements INewsDao{
 
@@ -136,7 +133,9 @@ public class NewsDao implements INewsDao{
 	public List<News> getKindNews(String mark) {
 		List<News> list = new ArrayList<News>();
 		Connection connection = DBUtil.getConnection();
-		String sql = "select * from news where mark = '"+ mark + "'?";
+		String sql = "select * from news where mark = '"+ mark + "'";
+//		String sql = "select * from news where mark = ?"+ mark ;
+//		System.out.println(sql);
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = pStatement.executeQuery();
@@ -157,4 +156,57 @@ public class NewsDao implements INewsDao{
 		return list;
 	}
 
+	
+	//below are for community news
+	@Override
+	public List<News> getCommuNews(){
+		List<News> list = new ArrayList<News>();
+		Connection connection = DBUtil.getConnection();
+		String sql = "select * from news where mark = '学术交流' or mark = '合作研究'";
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = pStatement.executeQuery();
+			while (resultSet.next()) {
+				News news = new News();
+				news.setId(resultSet.getInt("id"));
+				news.setTitle(resultSet.getString("title"));
+				news.setAuthor(resultSet.getString("author"));
+				news.setTime(resultSet.getDate("time"));
+				news.setContent(resultSet.getString("content"));
+				news.setMark(resultSet.getString("mark"));
+				list.add(news);
+			}
+			connection.close();
+		} catch (Exception e) {
+			
+		}
+		
+		return list;
+	}
+	
+	@Override
+	public List<News> getResultNews(){
+		List<News> list = new ArrayList<News>();
+		String sql = "select * from news where mark = '重大项目' or mark = '科学研究' or mark = '精品课程'";
+		Connection connection = DBUtil.getConnection();
+		try {
+			PreparedStatement pStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = pStatement.executeQuery();
+			while (resultSet.next()) {
+				News news = new News();
+				news.setId(resultSet.getInt("id"));
+				news.setTitle(resultSet.getString("title"));
+				news.setAuthor(resultSet.getString("author"));
+				news.setTime(resultSet.getDate("time"));
+				news.setContent(resultSet.getString("content"));
+				news.setMark(resultSet.getString("mark"));
+				list.add(news);
+			}
+			connection.close();
+		} catch (Exception e) {
+			
+		}
+		
+		return list;
+	}
 }

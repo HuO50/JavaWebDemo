@@ -33,7 +33,7 @@ public class NewsManageServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		INewsService service = new NewsService();
-		List<News> list = service.getallNews();
+		List<News> list = service.getKindNews("学术动态");
 		request.setAttribute("newslist", list);
 		
 		request.getRequestDispatcher("WEB-INF/jsp/NewsManage.jsp").forward(request, response);

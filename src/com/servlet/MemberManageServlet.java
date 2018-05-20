@@ -37,7 +37,7 @@ public class MemberManageServlet extends HttpServlet {
 		
 		request.setAttribute("userlist", list);
 		
-		request.getRequestDispatcher("WEB-INF/jsp/MemberManage.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/IntroduceManage.jsp").forward(request, response);
 	}
 
 	/**

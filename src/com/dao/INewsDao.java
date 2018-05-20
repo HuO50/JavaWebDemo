@@ -17,4 +17,10 @@ public interface INewsDao {
 	public boolean deleteNews(int id);
 
 	public List<News> getKindNews(String mark);
+	
+	//below is for community news impl
+	public List<News> getCommuNews();
+	
+	//below is for result news impl
+	public List<News> getResultNews();
 }

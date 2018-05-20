@@ -49,4 +49,6 @@ public class NewsService implements INewsService{
 		INewsDao dao = new NewsDao();
 		return dao.getKindNews(mark);
 	}
+	
+	
 }

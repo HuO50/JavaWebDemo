@@ -38,7 +38,7 @@
 			<a class="ad_setting_a" href="javascript:; ">管理员：&nbsp;&nbsp;${username}</a>
 			<ul class="dropdown-menu-uu" style="display: none" id="ad_setting_ul">
 				<li class="ad_setting_ul_li"><a href="javascript:;">
-						设&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</a></li> -->
+						设&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</a></li> 
 				<li class="ad_setting_ul_li"><a href="Logout"> <span
 						class="font-bold">退出</span>
 				</a></li>
@@ -54,18 +54,18 @@
 					<s class="sz"></s>管理中心<i class="glyph-icon xlcd"></i>
 			</a>
 				<ul>
-					<li><a href="NewsManage" target="menuFrame"><i
-							class="fa fa-newspaper-o"></i>新闻管理</a></li>
-					<li><a href="MemberManage" target="menuFrame"><i
-							class="fa fa-user"></i> 用户管理</a></li>
 					<li><a href="MemberManage" target="menuFrame"><i
 							class="fa fa-picture-o"></i>轮播图片</a></li>
-					<li><a href="MemberManage" target="menuFrame"><i
-							class="fa fa-keyboard-o"></i>概况编辑</a></li>
-					<li><a href="MemberManage" target="menuFrame"><i
-							class="fa fa-flag-o"></i>制度编辑</a></li>
-					<li><a href="MemberManage" target="menuFrame"><i
-							class="fa fa-star"></i>成果编辑</a></li>
+					<li><a href="InfoManage" target="menuFrame"><i
+							class="fa fa-user"></i> 研究院概况</a></li>
+					<li><a href="NewsManage" target="menuFrame"><i
+							class="fa fa-newspaper-o"></i>学术动态</a></li>
+					<li><a href="CommunicationManage" target="menuFrame"><i
+							class="fa fa-keyboard-o"></i>学术交流</a></li>
+					<li><a href="ResultManage" target="menuFrame"><i
+							class="fa fa-flag-o"></i>成果展示</a></li>
+					<li class="menu-list" ><a href="RuleManage" target="menuFrame"><i
+							class="fa fa-star"></i>管理制度</a></li>
 				</ul></li>
 		</ul>
 	</div>

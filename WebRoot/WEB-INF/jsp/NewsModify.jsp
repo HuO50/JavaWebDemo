@@ -56,8 +56,6 @@
 						<span class="select-box"> <select class="select" id="mark"
 							name="mark">
 								<option value="xsdt">学术动态</option>
-								<option value="xsjl">学术交流</option>
-								<option value="hzyj">合作研究</option>
 						</select>
 						</span>
 					</div>
