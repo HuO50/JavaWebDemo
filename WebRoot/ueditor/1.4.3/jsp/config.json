@@ -1,4 +1,5 @@
 {
+	
     "imageActionName": "uploadimage", 
     "imageFieldName": "upfile", 
     "imageMaxSize": 2048000, 
@@ -6,8 +7,8 @@
     "imageCompressEnable": true, 
     "imageCompressBorder": 1600, 
     "imageInsertAlign": "none", 
-    "imageUrlPrefix": "", 
-    "imagePathFormat": "upload/image/{filename}", 
+    "imageUrlPrefix": "/Work", 
+    "imagePathFormat": "/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}", 
                                 
     "scrawlActionName": "uploadscrawl", 
     "scrawlFieldName": "upfile", 
@@ -45,7 +46,7 @@
     "fileActionName": "uploadfile", 
     "fileFieldName": "upfile", 
     "filePathFormat": "/upload/file/{filename}", 
-    "fileUrlPrefix": "", 
+    "fileUrlPrefix": "/Work", 
     "fileMaxSize": 51200000, 
     "fileAllowFiles": [
         ".png", ".jpg", ".jpeg", ".gif", ".bmp",

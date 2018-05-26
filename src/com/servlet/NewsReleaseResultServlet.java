@@ -60,20 +60,11 @@ public class NewsReleaseResultServlet extends HttpServlet {
 		news.setTitle(title);
 		news.setTime(time);
 		news.setContent(content);
-		if (mark.equals("xsjl")) {
-			mark = "学术交流";
-		}else if (mark.equals("xsdt")) {
-			mark = "学术动态";
-		}else if (mark.equals("hzyj")) {
-			mark = "合作研究";
-		}else {
-			mark = mark;
-		}
 		news.setMark(mark);
 		
 		INewsService service = new NewsService();
 		boolean b = service.addNews(news);
-		
+		System.out.println( news.toString());
 		if (b) {
 			request.getRequestDispatcher("WEB-INF/jsp/NewsAddSucc.jsp").forward(request, response);
 		} else {

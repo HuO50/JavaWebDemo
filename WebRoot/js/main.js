@@ -8,7 +8,7 @@ angular.module('myApp', [])
         var tabHeaderName = [ "研究院简介","bug2","学术交流","重大项目","研究人员聘任条例"];
         $scope.headerText = "";
         console.log(window.location.pathname);
-        ["general","news","communication","achievements","management"].forEach(function(item, index){
+        ["PageAbstractInfo","PageResearchNews","PageCommunicationNews","PageResult","PageRule"].forEach(function(item, index){
             if(window.location.pathname.indexOf(item) !== -1){
                 $scope.headerText = tabHeaderName[index];
             }

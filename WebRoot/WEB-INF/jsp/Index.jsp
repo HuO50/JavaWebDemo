@@ -54,7 +54,7 @@
 					<s class="sz"></s>管理中心<i class="glyph-icon xlcd"></i>
 			</a>
 				<ul>
-					<li><a href="MemberManage" target="menuFrame"><i
+					<li><a href="PictureManage" target="menuFrame"><i
 							class="fa fa-picture-o"></i>轮播图片</a></li>
 					<li><a href="InfoManage" target="menuFrame"><i
 							class="fa fa-user"></i> 研究院概况</a></li>

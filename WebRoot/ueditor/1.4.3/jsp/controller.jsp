@@ -11,4 +11,6 @@
 	
 	out.write( new ActionEnter( request, rootPath ).exec() );
 	
+	System.out.println("1" + rootPath);
+	System.out.print(new ActionEnter( request, rootPath ).exec());
 %>

@@ -44,7 +44,13 @@ public class LoginFilter implements Filter {
 		 */
 
 		// 登陆页面无需过滤
-		if (path.indexOf("/Login") > -1) {
+	
+		if (path.indexOf("/Login") > -1 || path.indexOf("/Page") > -1
+				|| path.indexOf("/css") > -1 || path.indexOf("/datatables") > -1|| path.indexOf("/font-awesome-4.5.0") > -1
+				|| path.indexOf("/Hui-iconfont") > -1 || path.indexOf("/icheck") > -1|| path.indexOf("/images") > -1
+				|| path.indexOf("/js") > -1 || path.indexOf("/layer") > -1|| path.indexOf("/My97DatePicker") > -1
+				|| path.indexOf("/ueditor") > -1 || path.indexOf("/upload") > -1|| path.indexOf("/utilLib") > -1
+				|| path.indexOf("/Validform") > -1) {
 			chain.doFilter(servletRequest, servletResponse);
 			return;
 		}
@@ -52,7 +58,7 @@ public class LoginFilter implements Filter {
 		// 判断如果没有取到员工信息,就跳转到登陆页面
 		if (name == null || "".equals(name)) {
 			// 跳转到登陆页面
-			servletResponse.sendRedirect("Login");
+			servletResponse.sendRedirect("PageIndex");
 		} else {
 			// 已经登陆,继续此次请求
 			chain.doFilter(request, response);

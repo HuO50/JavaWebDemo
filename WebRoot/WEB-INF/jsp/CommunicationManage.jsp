@@ -90,13 +90,13 @@
 	<script type="text/javascript" src="js/H-ui.admin.js"></script>
 	<script type="text/javascript">
 		$('.table-sort').dataTable({
-			"aaSorting" : [ [ 0, "asc" ] ],//默认第几个排序
+			"aaSorting" : [ [ 0, "desc" ] ],//默认第几个排序
 			"bStateSave" : true,//状态保存
 			"aoColumnDefs" : [
 			//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
 			{
 				"orderable" : false,
-				"aTargets" : [ 1, 4 ]
+				"aTargets" : [ 1, 5 ]
 			} // 制定列不参与排序
 			]
 		});

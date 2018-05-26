@@ -36,7 +36,7 @@
 				class="table table-border table-bordered table-bg table-hover table-sort">
 				<thead>
 					<tr class="text-c">
-						<th width="45%">规章制度</th>
+						<th width="45%">研究院概况</th>
 
 						<th width="15%">操作</th>
 					</tr>
@@ -55,45 +55,21 @@
 							href="javascript:;" title="编辑"> <i class="fa fa-pencil"></i>
 						</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
 					</tr>
-					<!-- 修改 学术委员  -->
+					<!-- 人员变动  -->
 					<tr class="text-c">
 						<td width="45%" style="text-align: center;"><a
 							style="text-decoration: none; cursor: pointer; color: black;"
 							href="javascript:void(0)"
-							onclick="layer_show('研究院学术委员','InfoMemberDetail','800','800')">
-								研究院学术委员</a></td>
+							onclick="layer_show('人员变动','MemberManage','800','800')">
+								人员变动</a></td>
 						<td class="f-14 td-manage"><a style="text-decoration: none"
 							class="ml-5"
-							onClick="article_edit('修改研究院学术委员','InfoMemberModify')"
+							onClick="article_edit('人员变动','MemberManage')"
 							href="javascript:;" title="编辑"> <i class="fa fa-pencil"></i>
 						</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
 					</tr>
-					<!-- 修改本院研究员 -->
-					<tr class="text-c">
-						<td width="45%" style="text-align: center;"><a
-							style="text-decoration: none; cursor: pointer; color: black;"
-							href="javascript:void(0)"
-							onclick="layer_show('本院研究员','InfoInnerResearchDetail','800','800')">
-								本院研究员</a></td>
-						<td class="f-14 td-manage"><a style="text-decoration: none"
-							class="ml-5"
-							onClick="article_edit('修改本院研究员','InfoInnerResearchModify')"
-							href="javascript:;" title="编辑"> <i class="fa fa-pencil"></i>
-						</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
-					</tr>
-					<!-- 特聘研究员 -->
-					<tr class="text-c">
-						<td width="45%" style="text-align: center;"><a
-							style="text-decoration: none; cursor: pointer; color: black;"
-							href="javascript:void(0)"
-							onclick="layer_show('特聘研究员','InfoOuterResearchDetail','800','800')">
-								特聘研究员</a></td>
-						<td class="f-14 td-manage"><a style="text-decoration: none"
-							class="ml-5"
-							onClick="article_edit('修改特聘研究员','InfoOuterResearchModify')"
-							href="javascript:;" title="编辑"> <i class="fa fa-pencil"></i>
-						</a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
-					</tr>
+
+
 					<!-- 民族语言文字应用对策研究室 -->
 					<tr class="text-c">
 						<td width="45%" style="text-align: center;"><a

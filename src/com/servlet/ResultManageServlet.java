@@ -1,6 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -35,6 +36,7 @@ public class ResultManageServlet extends HttpServlet {
 //		List<News> list = service.getKindNews("学术动态");
 		IResultService service = new ResultService();
 		List<News> list= service.getAllResultNews();
+		Collections.reverse(list);
 //		System.out.println(list.size());
 		request.setAttribute("newslist", list);
 		

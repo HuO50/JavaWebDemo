@@ -1,18 +1,18 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.model.User;
-import com.service.IUserService;
-import com.service.impl.UserService;
+import com.model.Member;
+import com.service.IMemberService;
+import com.service.impl.MemberService;
 
 public class MemberModifyServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -46,13 +46,14 @@ public class MemberModifyServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
+		int id = Integer.parseInt(request.getParameter("memberid"));
 		
-		int id = Integer.parseInt(request.getParameter("userid"));
-		IUserService service = new UserService();
-		User user = service.getUser(id);
 		
-		request.setAttribute("user", user);
+		IMemberService iMemberService = new MemberService();
+		Member member = iMemberService.getMember(id);
+		request.setAttribute("member", member);
 		request.getRequestDispatcher("WEB-INF/jsp/MemberModify.jsp").forward(request, response);
+
 	}
 
 }

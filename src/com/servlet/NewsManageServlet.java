@@ -2,6 +2,7 @@ package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -34,6 +35,7 @@ public class NewsManageServlet extends HttpServlet {
 		
 		INewsService service = new NewsService();
 		List<News> list = service.getKindNews("学术动态");
+		//Collections.reverse(list);
 		request.setAttribute("newslist", list);
 		
 		request.getRequestDispatcher("WEB-INF/jsp/NewsManage.jsp").forward(request, response);

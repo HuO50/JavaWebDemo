@@ -1,6 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -28,6 +29,7 @@ public class CommunicationManageServlet extends HttpServlet {
 //		INewsService service = new NewsService();
 		ICommuService service = new CommuService();
 		List<News> list = service.getAllCommunityNews();
+		Collections.reverse(list);
 		request.setAttribute("newslist", list);
 		
 		request.getRequestDispatcher("WEB-INF/jsp/CommunicationManage.jsp").forward(request, response);

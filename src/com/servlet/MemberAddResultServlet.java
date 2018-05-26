@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.model.Member;
 import com.model.User;
+import com.service.IMemberService;
 import com.service.IUserService;
+import com.service.impl.MemberService;
 import com.service.impl.UserService;
 import com.util.GetNowDateUtil;
 
@@ -37,29 +40,23 @@ public class MemberAddResultServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
-		User user = new User();
+		Member member = new Member();
+		String name = request.getParameter("name");
+		String resume = request.getParameter("resume");
+		String belong = request.getParameter("belong");
+
+		member.setName(name);
+		member.setResume(resume);
+		member.setBelong(belong);
 		
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String email = request.getParameter("email");
-		String phonenum = request.getParameter("phonenum");
-		String jurisdiction = "yes";
-		Date logintime = GetNowDateUtil.getDate();
-		user.setUsername(username);
-		user.setPassword(password);
-		user.setEmail(email);
-		user.setPhonenum(phonenum);
-		user.setJurisdiction(jurisdiction);
-		user.setLogintime(logintime);
-		System.out.println(user);
+		IMemberService iMemberService = new MemberService();
 		
-		IUserService service = new UserService();
-		boolean b = service.addUser(user);
+		boolean b = iMemberService.addMember(member);
 		
 		if (b) {
-			request.getRequestDispatcher("WEB-INF/jsp/MemberAddSucc.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsp/NewsAddSucc.jsp").forward(request, response);
 		}else {
-			request.getRequestDispatcher("WEB-INF/jsp/MemberAddEorr.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsp/NewsAddEorr.jsp").forward(request, response);
 		}
 		
 	}

@@ -1,20 +1,21 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.model.User;
-import com.service.IUserService;
-import com.service.impl.UserService;
-import com.util.GetNowDateUtil;
+import com.model.Member;
+import com.service.IMemberService;
+import com.service.impl.MemberService;
 
 public class MemberModifyResultServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -49,23 +50,25 @@ public class MemberModifyResultServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
 		
-		IUserService service = new UserService();
-		int id = Integer.parseInt(request.getParameter("userid"));
-		String password = request.getParameter("password");
-		String email = request.getParameter("email");
-		String phonenum = request.getParameter("phonenum");
+
+		IMemberService iMemberService = new MemberService();
+		int id = Integer.parseInt(request.getParameter("memberid"));
+		String name = request.getParameter("name");
+		String resume = request.getParameter("resume");
+		String belong = request.getParameter("belong");
 		
-		User user = service.getUser(id);
-		user.setId(id);
-		user.setPassword(password);
-		user.setEmail(email);
-		user.setPhonenum(phonenum);						
-		boolean b = service.modifyUser(user, id);
+		Member member = iMemberService.getMember(id);
+		member.setId(id);
+		member.setName(name);
+		member.setResume(resume);
+		member.setBelong(belong);
+							
+		boolean b = iMemberService.modifyMember(id, member);
 		
 		if (b) {
-			request.getRequestDispatcher("WEB-INF/jsp/MemberModifySucc.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsp/NewsModifySucc.jsp").forward(request, response);
 		}else {
-			request.getRequestDispatcher("WEB-INF/jsp/MemberModifyEorr.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/jsp/NewsModifyEorr.jsp").forward(request, response);
 		}
 		
 	}

@@ -28,7 +28,7 @@ public class InfoAbstractInfoModifyResultServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		String abstractinfo = request.getParameter("abstractinfo");
-	//	System.out.println(abstractinfo);
+		System.out.println(abstractinfo);
 		
 		Info info = new Info();
 		info.setAbstractinfo(abstractinfo);

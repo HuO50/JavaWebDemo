@@ -11,15 +11,15 @@ import com.dao.INewsDao;
 import com.model.News;
 import com.util.DBUtil;
 
-public class NewsDao implements INewsDao{
+public class NewsDao implements INewsDao {
 
 	@Override
 	public List<News> getallNews() {
 		// TODO Auto-generated method stub
 		Connection connection = DBUtil.getConnection();
-		String sql = "select * from news";		
+		String sql = "select * from news";
 		List<News> list = new ArrayList<News>();
- 		try {
+		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = pStatement.executeQuery();
 			while (resultSet.next()) {
@@ -36,7 +36,7 @@ public class NewsDao implements INewsDao{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 		return list;
 	}
 
@@ -46,22 +46,26 @@ public class NewsDao implements INewsDao{
 		News news = new News();
 		Connection connection = DBUtil.getConnection();
 		String sql = "select * from news where id = " + id;
+		System.out.println(sql);
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = pStatement.executeQuery();
-			while (resultSet.next()) {	
+
+			while (resultSet.next()) {
 				news.setId(resultSet.getInt("id"));
-				news.setTitle(resultSet.getString("title"));
+				news.setTitle(resultSet.getString("title"));	
 				news.setAuthor(resultSet.getString("author"));
 				news.setTime(resultSet.getDate("time"));
 				news.setContent(resultSet.getString("content"));
 				news.setMark(resultSet.getString("mark"));
+
 			}
 			connection.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return news;
 	}
 
@@ -89,7 +93,7 @@ public class NewsDao implements INewsDao{
 	}
 
 	@Override
-	public boolean modifyNews(int id, News news){
+	public boolean modifyNews(int id, News news) {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		Connection connection = DBUtil.getConnection();
@@ -128,14 +132,14 @@ public class NewsDao implements INewsDao{
 		}
 		return b;
 	}
-	
+
 	@Override
 	public List<News> getKindNews(String mark) {
 		List<News> list = new ArrayList<News>();
 		Connection connection = DBUtil.getConnection();
-		String sql = "select * from news where mark = '"+ mark + "'";
-//		String sql = "select * from news where mark = ?"+ mark ;
-//		System.out.println(sql);
+		String sql = "select * from news where mark = '" + mark + "'";
+		// String sql = "select * from news where mark = ?"+ mark ;
+		// System.out.println(sql);
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = pStatement.executeQuery();
@@ -151,15 +155,14 @@ public class NewsDao implements INewsDao{
 			}
 			connection.close();
 		} catch (Exception e) {
-			
+
 		}
 		return list;
 	}
 
-	
-	//below are for community news
+	// below are for community news
 	@Override
-	public List<News> getCommuNews(){
+	public List<News> getCommuNews() {
 		List<News> list = new ArrayList<News>();
 		Connection connection = DBUtil.getConnection();
 		String sql = "select * from news where mark = '学术交流' or mark = '合作研究'";
@@ -178,14 +181,14 @@ public class NewsDao implements INewsDao{
 			}
 			connection.close();
 		} catch (Exception e) {
-			
+
 		}
-		
+
 		return list;
 	}
-	
+
 	@Override
-	public List<News> getResultNews(){
+	public List<News> getResultNews() {
 		List<News> list = new ArrayList<News>();
 		String sql = "select * from news where mark = '重大项目' or mark = '科学研究' or mark = '精品课程'";
 		Connection connection = DBUtil.getConnection();
@@ -204,9 +207,9 @@ public class NewsDao implements INewsDao{
 			}
 			connection.close();
 		} catch (Exception e) {
-			
+
 		}
-		
+
 		return list;
 	}
 }

@@ -33,7 +33,7 @@
 </head>
 <body>
 	<div style="float: center;">
-		<form action="ResultAddResult" method="post"
+		<form action="NewsReleaseResult" method="post"
 			class="form form-horizontal" id="form-article-add">
 			<div class="row cl">
 				<label class="form-label col-1"><span class="c-red">*</span>文章标题：</label>
@@ -55,7 +55,7 @@
 					<div class="formControls col-1" style="width: 10%;">
 						<span class="select-box"> <select class="select" id="mark"
 							name="mark">
-								<option value="xsdt">学术动态</option>
+								<option value="学术动态">学术动态</option>
 						</select>
 						</span>
 					</div>
