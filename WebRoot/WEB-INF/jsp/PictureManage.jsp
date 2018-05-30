@@ -112,7 +112,7 @@
 		</form>
 </div>
 	<div>
-		<form method="post" action="UploadPicture5" enctype=multipart/form-data>
+		<form method="post" action="UploadPicture6" enctype=multipart/form-data>
 			<div class="row cl">
 			
 				<div class="formControls col-1"

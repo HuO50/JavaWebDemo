@@ -47,19 +47,19 @@
 					<h3>成果展示</h3>
 				</div>
 				<div class="content" ng-if="showContent == 1" name="news1">
-					<c:forEach var="news" items="${news }">
+					<c:forEach var="news" items="${news1 }">
 						<li class="news-item"><a href="PageNews?id=${news.id }">${news.title }</a>
 							<span>${news.time }</span></li>
 					</c:forEach>
 				</div>
 								<div class="content" ng-if="showContent == 2" name="news2">
-					<c:forEach var="news" items="${news2 }">
+					<c:forEach var="news2" items="${news2 }">
 						<li class="news-item"><a href="PageNews?id=${news2.id }">${news2.title }</a>
 							<span>${news2.time }</span></li>
 					</c:forEach>
 				</div>
 								<div class="content" ng-if="showContent == 3" name="news3">
-					<c:forEach var="news" items="${news3 }">
+					<c:forEach var="news3" items="${news3 }">
 						<li class="news-item"><a href="PageNews?id=${news3.id }">${news3.title }</a>
 							<span>${news3.time }</span></li>
 					</c:forEach>

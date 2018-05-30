@@ -12,13 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.IPictureDao;
 import com.model.Info;
+import com.model.Link;
 import com.model.News;
 import com.model.Picture;
 import com.service.IInfoService;
+import com.service.ILinkService;
 import com.service.INewsService;
 import com.service.IPictureService;
 import com.service.IRuleService;
 import com.service.impl.InfoService;
+import com.service.impl.LinkService;
 import com.service.impl.NewsService;
 import com.service.impl.PictureService;
 
@@ -61,6 +64,10 @@ public class PageIndexServlet extends HttpServlet {
 		Collections.reverse(news2);
 		request.setAttribute("news2", news2);
 		
+		//友情链接
+		ILinkService iLinkService = new LinkService();
+		List<Link> links = iLinkService.getAllLink();
+		request.setAttribute("links", links);
 		request.getRequestDispatcher("WEB-INF/jsp/PageIndex.jsp").forward(request, response);
 	}
 

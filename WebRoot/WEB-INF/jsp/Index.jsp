@@ -38,7 +38,7 @@
 			<a class="ad_setting_a" href="javascript:; ">管理员：&nbsp;&nbsp;${username}</a>
 			<ul class="dropdown-menu-uu" style="display: none" id="ad_setting_ul">
 				<li class="ad_setting_ul_li"><a href="javascript:;">
-						设&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</a></li> 
+						设&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</a></li>
 				<li class="ad_setting_ul_li"><a href="Logout"> <span
 						class="font-bold">退出</span>
 				</a></li>
@@ -64,8 +64,10 @@
 							class="fa fa-keyboard-o"></i>学术交流</a></li>
 					<li><a href="ResultManage" target="menuFrame"><i
 							class="fa fa-flag-o"></i>成果展示</a></li>
-					<li class="menu-list" ><a href="RuleManage" target="menuFrame"><i
+					<li class="menu-list"><a href="RuleManage" target="menuFrame"><i
 							class="fa fa-star"></i>管理制度</a></li>
+					<li class="menu-list"><a href="LinkManage" target="menuFrame"><i
+							class="fa fa-email"></i>友情链接</a></li>
 				</ul></li>
 		</ul>
 	</div>

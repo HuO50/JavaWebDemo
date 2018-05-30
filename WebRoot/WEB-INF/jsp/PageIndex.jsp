@@ -59,7 +59,7 @@
 							</div>
 						</div>
 						<div class="column-general">
-							
+
 							<p style="text-indent: 2em;">国家民委中国民族语言文字应用研究院为中央民族大学非独立的科研平台实体研究机构，2017年12月29日正式成立，是国家民委民族语言文字工作的重要的科研基地。</p>
 							<p style="text-indent: 2em;">研究院始终紧紧围绕国家民族团结进步事业和民族地区社会发展的重大需求及民族语言文字应用领域的主要问题，开展语言国情、语言政策、语言战略、语言安全、民族语言文字的规范化、标准化、信息化等的研究，为国家和民族地区语言文字事业的发展提供支撑。</p>
 						</div>
@@ -76,22 +76,24 @@
 								<a href="PageResearchNews">MORE>></a>
 							</h4>
 						</div>
-						
-							<div class="communication-root">
-								<img style="max-width: 350px;" alt="" src="${picture5 }">
-								<div class="communication-content">
-								
+
+						<div class="communication-root">
+							<img style="min-width: 350px; max-width: 350px;" alt=""
+								src="${picture5 }">
+							<div class="communication-content">
+
 								<c:forEach var="news1" items="${news1}" begin="0" end="3">
 									<div class="news-text">
 										<div class="news-header">
-											<a href="PageNews?id=${news1.id }" style="color: rgb(25, 80, 199)">${news1.title}</a>
+											<a href="PageNews?id=${news1.id }"
+												style="color: rgb(25, 80, 199)">${news1.title}</a>
 										</div>
 										<p>${news1.time }</p>
 									</div>
 								</c:forEach>
-								</div>
 							</div>
-							
+						</div>
+
 					</div>
 					<!-- 插入学术交流新闻 -->
 					<div class="column-communication">
@@ -104,24 +106,40 @@
 							</h4>
 						</div>
 						<div class="communication-root">
-							<img style="max-width: 350px;" alt="" src="${picture6 }">
+							<img style="min-width: 350px; max-width: 350px;" alt=""
+								src="${picture6 }">
 							<div class="communication-content">
-							
+
 								<c:forEach var="news2" items="${news2 }" begin="0" end="3">
-								<div class="news-text">
-									<div class="news-header">
-										<a href="PageNews?id=${news2.id }"
-											style="color: rgb(25, 80, 199)">${news2.title }</a>
+									<div class="news-text">
+										<div class="news-header">
+											<a href="PageNews?id=${news2.id }"
+												style="color: rgb(25, 80, 199)">${news2.title }</a>
+										</div>
+										<p>${news2.time }</p>
 									</div>
-									<p>${news2.time }</p>
-								</div>
 								</c:forEach>
-								
+
 
 							</div>
 						</div>
-						
-						
+						<div>
+							<div class="column-general-head">
+								<br> <br>
+								<h4 style="width: 88%; float: left;">友情链接</h4>
+								<h4 style="width: 11%; float: right; text-align: right;"></h4>
+							</div>
+							<div class="communication-content">
+							<c:forEach var="links" items="${links }">
+								<div class="news-text">
+									<div class="news-header">
+										<a href="http://${links.link }" target="view_window" style="color: rgb(25, 80, 199)">${links.name }</a>
+									</div>
+								</div>
+							</c:forEach>
+							</div>
+						</div>
+
 						<!--                <p><a href="page/communication-content.html?id=1">不宜将国家通用语言称作“国语”“官方语言”</a></p>
                     <p><a href="page/communication-content.html?id=2">关于我国少数民族语言文字政策的思考</a></p>
                     <p><a href="page/communication-content.html?id=3">少数民族语言文字的标准化和信息化建设</a></p>

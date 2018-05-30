@@ -10,23 +10,28 @@ import javax.swing.text.StyledDocument;
 
 import org.junit.Test;
 
+import com.dao.ILinkDao;
 import com.dao.IMemberDao;
 import com.dao.INewsDao;
 import com.dao.IPictureDao;
+import com.dao.impl.LinkDao;
 import com.dao.impl.MemberDao;
 import com.dao.impl.NewsDao;
 import com.dao.impl.PictureDao;
+import com.model.Link;
 import com.model.Member;
 import com.model.News;
 import com.model.Picture;
 import com.model.Rule;
 import com.mysql.jdbc.Connection;
 import com.service.ICommuService;
+import com.service.ILinkService;
 import com.service.IMemberService;
 import com.service.INewsService;
 import com.service.IResultService;
 import com.service.IRuleService;
 import com.service.impl.CommuService;
+import com.service.impl.LinkService;
 import com.service.impl.MemberService;
 import com.service.impl.NewsService;
 import com.service.impl.ResultService;
@@ -49,6 +54,30 @@ public class test {
 //		picturereceive = iPictureDao.getPicture(1);
 //		System.out.println(picturereceive.toString());
 		
+//		ILinkService service = new LinkService();
+//		
+//		
+//		List<Link> list = new ArrayList<Link>();
+//	
+//		
+//		list = service.getAllLink();
+//		
+//		System.out.println(list.size());
+//		System.out.println(list.get(1));
+		
+		
+//		ILinkDao dao = new LinkDao();
+//		Link link = new Link();
+//		link = dao.getLink(1);
+//		System.out.println(link.toString());
+		
+		ILinkService service = new LinkService();
+		service.delLink(2);
+		
+//		dao.delLink(1);
+//		List<Link> list = new ArrayList<Link>();
+//		list = dao.getAllLink();
+//		System.out.println(list.size());
 //		ICommuService commuService = new CommuService();
 //		NewsService newsService = new NewsService();
 //		CommuService commuService = new CommuService();

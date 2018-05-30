@@ -28,6 +28,7 @@ public class PageResultServlet extends HttpServlet {
 		List<News> news1 = iResultService.getKindResult("重大项目");
 		List<News> news2 = iResultService.getKindResult("科学研究");
 		List<News> news3 = iResultService.getKindResult("精品课程");
+//		System.out.println(news1.toString());
 		Collections.reverse(news1);
 		Collections.reverse(news2);
 		Collections.reverse(news3);
