@@ -26,7 +26,7 @@
 				<li class="chooseTab"><a href="PageAbstractInfo">研究院概况</a></li>
 				<li><a href="PageResearchNews">学术动态</a></li>
 				<li><a href="PageCommunicationNews">学术交流</a></li>
-				<li><a href="PageProjectNews">成果展示</a></li>
+				<li><a href="PageResult">成果展示</a></li>
 				<li><a href="PageRule">管理制度</a></li>
 			</ul>
 		</div>
@@ -74,26 +74,26 @@
 				</div>
 				<div class="content" ng-if=" showContent == 3">
 					<p>研究院的研究人员，分为专职和兼职两种。除专职研究人员外，研究院根据研究任务和研究计划，聘用部分兼职人员，兼职人员采取特聘教授和研究员方式参与研究院的研究任务，聘期根据项目研究时限而定。先期暂聘下列人员。</p>
+
 				</div>
-				<div class="content" ng-if=" showContent == 13">
-					<p>研究院的研究人员，分为专职和兼职两种。除专职研究人员外，研究院根据研究任务和研究计划，聘用部分兼职人员，兼职人员采取特聘教授和研究员方式参与研究院的研究任务，聘期根据项目研究时限而定。先期暂聘下列人员。</p>
+				<div class="content" style="text-indent:0em;" ng-if=" showContent == 13">
 					<div class="committee">
-					<c:forEach var="member2" items="${member2}">
-					<br />
-							<span class="mb"><a href="PageMemberDetail?id=${member2.id }">${member2.name }
-							</a> </span>
-						</p>
-					</c:forEach>
+						<c:forEach var="member2" items="${member2}">
+						<br />						
+								<span class="mb"><a href="PageMemberDetail?id=${member2.id }">${member2.name }
+								</a> </span>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="content" ng-if=" showContent == 23">
 					<p>研究院的研究人员，分为专职和兼职两种。除专职研究人员外，研究院根据研究任务和研究计划，聘用部分兼职人员，兼职人员采取特聘教授和研究员方式参与研究院的研究任务，聘期根据项目研究时限而定。先期暂聘下列人员。</p>
-					<c:forEach var="member3" items="${member3}">
-						<br />
-							<span class="mb"><a href="PageMemberDetail?id=${member3.id }">${member3.name }
-							</a> </span>
-						</p>
-					</c:forEach>
+					<div class="committee">
+						<c:forEach var="member3" items="${member3}">
+							<br />
+								<span class="mb"><a href="PageMemberDetail?id=${member3.id }">${member3.name }
+								</a> </span>
+						</c:forEach>
+					</div>
 				</div>
 				<!--研究院机构详情-->
 				<div class="content" ng-if="showContent == 4">
