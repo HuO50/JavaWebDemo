@@ -46,7 +46,7 @@
 				<div>
 					<label class="form-label col-1">文章作者：</label>
 					<div class="formControls col-1" style="width: 10%">
-						<input type="text" class="input-text" placeholder="研究院"
+						<input type="text" class="input-text" value="研究院"
 							id="author" name="author">
 					</div>
 				</div>
@@ -107,7 +107,7 @@
         var ue = new baidu.editor.ui.Editor(
                 {
                     initialContent: "请在这里输入正文......",
-                    autoClearinitialContent: true, //focus时自动清空初始化时的内容
+                     
                     //initialFrameWeight:100%,
                     initialFrameHeight:600,
                     //autoHeightEnabled: true,

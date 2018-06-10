@@ -46,7 +46,7 @@
 				<div>
 					<label class="form-label col-1">文章作者：</label>
 					<div class="formControls col-1" style="width: 10%">
-						<input type="text" class="input-text" placeholder="${news.author}"
+						<input type="text" class="input-text" value="${news.author}"
 							id="author" name="author">
 					</div>
 				</div>
@@ -106,7 +106,6 @@
 	<script type="text/javascript">
     var ue = new baidu.editor.ui.Editor(
             {
-                autoClearinitialContent: true, //focus时自动清空初始化时的内容
                 //initialFrameWeight:100%,
                 initialFrameHeight:600,
                 textarea: 'content',      //设置提交时编辑器内容的名字

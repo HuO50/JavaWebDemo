@@ -63,7 +63,7 @@
 				</div>
 				<div class="content" ng-if=" showContent == 1">${abstractinfo }
 				</div>
-				<div class="content" ng-if="showContent == 5">
+				<div class="content" ng-if="showContent == 5" style="padding: 0px">
 					<div class="committee">
 						<c:forEach var="member1" items="${member1}">
 						<br />
@@ -87,7 +87,7 @@
 				</div>
 				<div class="content" ng-if=" showContent == 23">
 					<p>研究院的研究人员，分为专职和兼职两种。除专职研究人员外，研究院根据研究任务和研究计划，聘用部分兼职人员，兼职人员采取特聘教授和研究员方式参与研究院的研究任务，聘期根据项目研究时限而定。先期暂聘下列人员。</p>
-					<div class="committee">
+					<div class="committee" style="width: 90%">
 						<c:forEach var="member3" items="${member3}">
 							<br />
 								<span class="mb"><a href="PageMemberDetail?id=${member3.id }">${member3.name }

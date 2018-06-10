@@ -69,9 +69,9 @@
     var ue = new baidu.editor.ui.Editor(
             {
 
-                autoClearinitialContent: true, //focus时自动清空初始化时的内容
+                 
                 //initialFrameWeight:100%,
-                initialFrameHeight:350,
+                initialFrameHeight:600,
                 textarea: 'content',      //设置提交时编辑器内容的名字
 
                 autoFloatEnabled: false,
