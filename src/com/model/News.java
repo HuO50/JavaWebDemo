@@ -4,19 +4,8 @@ import java.sql.Date;
 
 public class News {
 
-	private int id;
-	private String title;
-	private String author;
-	private Date time;
-	private String content;
-	private String mark;
-	
-	public News() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public News(int id, String title, String author, Date time, String content, String mark) {
+	public News(int id, String title, String author, Date time, String content, String mark, Boolean istop,
+			int sortid) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -24,6 +13,41 @@ public class News {
 		this.time = time;
 		this.content = content;
 		this.mark = mark;
+		this.istop = istop;
+		this.sortid = sortid;
+	}
+
+
+
+	private int id;
+	private String title;
+	private String author;
+	private Date time;
+	private String content;
+	private String mark;
+	private Boolean istop;
+	private int sortid;
+	
+	public int getSortid() {
+		return sortid;
+	}
+
+	public void setSortid(int sortid) {
+		this.sortid = sortid;
+	}
+
+
+	public Boolean getIstop() {
+		return istop;
+	}
+
+	public void setIstop(Boolean istop) {
+		this.istop = istop;
+	}
+
+	public News() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getMark() {
@@ -78,8 +102,8 @@ public class News {
 
 	@Override
 	public String toString() {
-		return "News [id=" + id + ", title=" + title + ", mark=" + mark + ", author=" + author
-				+ ", time=" + time + ", content=" + content + "]";
+		return "News [id=" + id + ", title=" + title + ", author=" + author + ", time=" + time + ", content=" + content
+				+ ", mark=" + mark + ", istop=" + istop + ", sortid=" + sortid + "]";
 	}
 		
 }

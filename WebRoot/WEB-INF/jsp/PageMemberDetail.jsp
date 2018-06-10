@@ -25,7 +25,7 @@
 				<li class="chooseTab"><a href="PageAbstractInfo">研究院概况</a></li>
 				<li><a href="PageResearchNews">学术动态</a></li>
 				<li><a href="PageCommunicationNews">学术交流</a></li>
-				<li><a href="PageResult">成果展示</a></li>
+				<li><a href="PageProjectNews">成果展示</a></li>
 				<li><a href="PageRule">管理制度</a></li>
 			</ul>
 		</div>
@@ -35,8 +35,6 @@
 				<div class="header">
 					<h3>${member.name }</h3>
 				</div>
-
-
 				<div class="content">
 					<p>${member.name }</p>
 					<p>${member.resume }</p>

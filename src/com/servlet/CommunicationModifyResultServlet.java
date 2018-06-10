@@ -11,16 +11,11 @@ import com.model.News;
 import com.service.INewsService;
 import com.service.impl.NewsService;
 
-/**
- * Servlet implementation class CommunicationModifyResultServlet
- */
 @WebServlet("/CommunicationModifyResultServlet")
 public class CommunicationModifyResultServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -36,11 +31,15 @@ public class CommunicationModifyResultServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String content = request.getParameter("content");
 		String mark = request.getParameter("mark");
+		boolean istop = Boolean.parseBoolean(request.getParameter("istop"));
+		
 		News news = new News();		
 		news.setAuthor(author);
 		news.setTitle(title);
 		news.setContent(content);
 		news.setMark(mark);
+		news.setIstop(istop);
+		
 		if (mark.equals("xsjl")) {
 			mark = "学术交流";
 		}else if (mark.equals("hzyj")) {

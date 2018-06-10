@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div class="breadcrumb">
-		<a class=" r mr-20" style="padding-top: 6px"
+		<a class=" r mr-20" style=""
 			href="javascript:location.replace(location.href);"> <i
 			class="fa fa-refresh fa-2x" style="color: #5eb95e"></i>
 		</a>

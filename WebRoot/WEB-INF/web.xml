@@ -297,6 +297,12 @@
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PageCooperationNewsServlet</servlet-name>
+    <servlet-class>com.servlet.PageCooperationNewsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>PageResultServlet</servlet-name>
     <servlet-class>com.servlet.PageResultServlet</servlet-class>
   </servlet>
@@ -516,7 +522,7 @@
     <servlet-name>LinkManageServlet</servlet-name>
     <servlet-class>com.servlet.LinkManageServlet</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>LinkAddServlet</servlet-name>
@@ -539,6 +545,24 @@
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>LinkDeleteResultServlet</servlet-name>
     <servlet-class>com.servlet.LinkDeleteResultServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PageProjectNewsServlet</servlet-name>
+    <servlet-class>com.servlet.PageProjectNewsServlet</servlet-class>
+  </servlet>
+      <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PageScienceResearchNewsServlet</servlet-name>
+    <servlet-class>com.servlet.PageScienceResearchNewsServlet</servlet-class>
+  </servlet>
+        <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PageCourseNewsServlet</servlet-name>
+    <servlet-class>com.servlet.PageCourseNewsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -809,6 +833,10 @@
     <url-pattern>/PageCommunicationNews</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>PageCooperationNewsServlet</servlet-name>
+    <url-pattern>/PageCooperationNews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>PageResultServlet</servlet-name>
     <url-pattern>/PageResult</url-pattern>
   </servlet-mapping>
@@ -876,16 +904,15 @@
     <servlet-name>UploadPicture5Servlet</servlet-name>
     <url-pattern>/UploadPicture5</url-pattern>
   </servlet-mapping>
-
   <servlet-mapping>
     <servlet-name>UploadPicture6Servlet</servlet-name>
     <url-pattern>/UploadPicture6</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>LinkManageServlet</servlet-name>
     <url-pattern>/LinkManage</url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>LinkAddServlet</servlet-name>
     <url-pattern>/LinkAdd</url-pattern>
   </servlet-mapping>
@@ -900,6 +927,18 @@
   <servlet-mapping>
     <servlet-name>LinkDeleteResultServlet</servlet-name>
     <url-pattern>/LinkDeleteResult</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>PageProjectNewsServlet</servlet-name>
+    <url-pattern>/PageProjectNews</url-pattern>
+  </servlet-mapping>
+      <servlet-mapping>
+    <servlet-name>PageScienceResearchNewsServlet</servlet-name>
+    <url-pattern>/PageScienceResearchNews</url-pattern>
+  </servlet-mapping>
+       <servlet-mapping>
+    <servlet-name>PageCourseNewsServlet</servlet-name>
+    <url-pattern>/PageCourseNews</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>PageIndex</welcome-file>

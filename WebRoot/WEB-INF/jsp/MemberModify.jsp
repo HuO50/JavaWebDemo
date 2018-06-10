@@ -87,7 +87,24 @@
 	<script type="text/javascript" src="js/H-ui.js"></script>
 	<script type="text/javascript" src="js/H-ui.admin.js"></script>
 	<script type="text/javascript">
-		var ue = UE.getEditor('content');
+    var ue = new baidu.editor.ui.Editor(
+            {
+                initialContent: "请在这里输入正文......",
+                autoClearinitialContent: true, //focus时自动清空初始化时的内容
+                //initialFrameWeight:100%,
+                initialFrameHeight:350,
+                textarea: 'content',      //设置提交时编辑器内容的名字
+
+                autoFloatEnabled: false,
+                focus:false,
+                autoHeightEnabled: false,
+                sourceEditor: true,
+                wordCount: false,               //关闭字数统计
+                elementPathEnabled: false,      //关闭elementPath
+                maximumWords: 10240
+            }
+        );
+  ue.render("content");
 	</script>
 </body>
 </html>

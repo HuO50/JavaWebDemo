@@ -62,7 +62,7 @@
 	<script type="text/javascript" src="js/H-ui.js"></script>
 	<script type="text/javascript" src="js/H-ui.admin.js"></script>
 	<script type="text/javascript">
-		var ue = UE.getEditor('content');
+		
 	</script>
 </body>
 </html>

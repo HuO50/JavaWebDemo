@@ -30,6 +30,7 @@ public class NewsDao implements INewsDao {
 				news.setTime(resultSet.getDate("time"));
 				news.setContent(resultSet.getString("content"));
 				news.setMark(resultSet.getString("mark"));
+				news.setIstop(resultSet.getBoolean("istop"));
 				list.add(news);
 			}
 			connection.close();
@@ -58,7 +59,7 @@ public class NewsDao implements INewsDao {
 				news.setTime(resultSet.getDate("time"));
 				news.setContent(resultSet.getString("content"));
 				news.setMark(resultSet.getString("mark"));
-
+				news.setIstop(resultSet.getBoolean("istop"));
 			}
 			connection.close();
 		} catch (SQLException e) {
@@ -74,7 +75,7 @@ public class NewsDao implements INewsDao {
 		// TODO Auto-generated method stub
 		boolean b = false;
 		Connection connection = DBUtil.getConnection();
-		String sql = "insert into news (title,author,time,content,mark)values(?,?,?,?,?)";
+		String sql = "insert into news (title,author,time,content,mark,istop)values(?,?,?,?,?,?)";
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			pStatement.setString(1, news.getTitle());
@@ -82,6 +83,7 @@ public class NewsDao implements INewsDao {
 			pStatement.setDate(3, news.getTime());
 			pStatement.setString(4, news.getContent());
 			pStatement.setString(5, news.getMark());
+			pStatement.setBoolean(6, news.getIstop());
 			pStatement.executeUpdate();
 			connection.close();
 			b = true;
@@ -97,14 +99,15 @@ public class NewsDao implements INewsDao {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		Connection connection = DBUtil.getConnection();
-		String sql = "update news set title=?, author=?, content=?, mark=? where id = ?";
+		String sql = "update news set title=?, author=?, content=?, mark=?, istop=? where id = ?";
 		try {
 			PreparedStatement pStatement = connection.prepareStatement(sql);
 			pStatement.setString(1, news.getTitle());
 			pStatement.setString(2, news.getAuthor());
 			pStatement.setString(3, news.getContent());
 			pStatement.setString(4, news.getMark());
-			pStatement.setInt(5, id);
+			pStatement.setBoolean(5, news.getIstop());
+			pStatement.setInt(6, id);
 			pStatement.executeUpdate();
 			connection.close();
 			result = true;
@@ -151,6 +154,8 @@ public class NewsDao implements INewsDao {
 				news.setTime(resultSet.getDate("time"));
 				news.setContent(resultSet.getString("content"));
 				news.setMark(resultSet.getString("mark"));
+				news.setIstop(resultSet.getBoolean("istop"));
+				news.setSortid(resultSet.getInt("sortid"));
 				list.add(news);
 			}
 			connection.close();
@@ -177,13 +182,14 @@ public class NewsDao implements INewsDao {
 				news.setTime(resultSet.getDate("time"));
 				news.setContent(resultSet.getString("content"));
 				news.setMark(resultSet.getString("mark"));
+				news.setIstop(resultSet.getBoolean("istop"));
+				news.setSortid(resultSet.getInt("sortid"));
 				list.add(news);
 			}
 			connection.close();
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
-
 		return list;
 	}
 
@@ -203,13 +209,14 @@ public class NewsDao implements INewsDao {
 				news.setTime(resultSet.getDate("time"));
 				news.setContent(resultSet.getString("content"));
 				news.setMark(resultSet.getString("mark"));
+				news.setIstop(resultSet.getBoolean("istop"));
+				news.setSortid(resultSet.getInt("sortid"));
 				list.add(news);
 			}
 			connection.close();
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
-
 		return list;
 	}
 }

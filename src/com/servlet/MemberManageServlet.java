@@ -36,12 +36,14 @@ public class MemberManageServlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		
 		IMemberService iMemberService = new MemberService();
-		List<Member> members1 = iMemberService.getKindMember("学术委员");
-		request.setAttribute("member_research_list", members1);
-		List<Member> members2 = iMemberService.getKindMember("本院研究员");
-		request.setAttribute("member_inner_list", members2);
-		List<Member> members3 = iMemberService.getKindMember("特聘研究员");
-		request.setAttribute("member_outer_list", members3);
+		List<Member> members = iMemberService.getallMember();
+		request.setAttribute("memberlist", members);
+//		List<Member> members1 = iMemberService.getKindMember("学术委员");
+//		request.setAttribute("member_research_list", members1);
+//		List<Member> members2 = iMemberService.getKindMember("本院研究员");
+//		request.setAttribute("member_inner_list", members2);
+//		List<Member> members3 = iMemberService.getKindMember("特聘研究员");
+//		request.setAttribute("member_outer_list", members3);
 		request.getRequestDispatcher("WEB-INF/jsp/MemberManage.jsp").forward(request, response);
 	}
 

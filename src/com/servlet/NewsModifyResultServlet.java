@@ -1,9 +1,6 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,37 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.model.News;
 import com.service.INewsService;
 import com.service.impl.NewsService;
-import com.util.GetNowDateUtil;
 
 public class NewsModifyResultServlet extends HttpServlet {
 
-	/**
-	 * The doGet method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to get.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
+	private static final long serialVersionUID = 1L;
+
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
+			throws ServletException, IOException {	
 		this.doPost(request, response);
-		
 	}
 
-	/**
-	 * The doPost method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to post.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -56,21 +32,25 @@ public class NewsModifyResultServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String content = request.getParameter("content");
 		String mark = request.getParameter("mark");
+		boolean istop = Boolean.parseBoolean(request.getParameter("istop"));
+		
 		News news = new News();		
 		news.setAuthor(author);
 		news.setTitle(title);
 		news.setContent(content);
 		news.setMark(mark);
+		news.setIstop(istop);
+		
 		if (mark.equals("xsjl")) {
 			mark = "学术交流";
 		}else if (mark.equals("xsdt")) {
 			mark = "学术动态";
 		}else if (mark.equals("hzyj")) {
 			mark = "合作研究";
-		}else {
-			mark = mark;
 		}
+		
 		news.setMark(mark);
+		System.out.println(news.toString());
 		INewsService service = new NewsService();
 		boolean b = service.modifyNews(id, news);
 		

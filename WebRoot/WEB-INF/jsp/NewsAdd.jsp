@@ -46,7 +46,7 @@
 				<div>
 					<label class="form-label col-1">文章作者：</label>
 					<div class="formControls col-1" style="width: 10%">
-						<input type="text" class="input-text" value="${username}"
+						<input type="text" class="input-text" placeholder="研究院"
 							id="author" name="author">
 					</div>
 				</div>
@@ -56,6 +56,17 @@
 						<span class="select-box"> <select class="select" id="mark"
 							name="mark">
 								<option value="学术动态">学术动态</option>
+						</select>
+						</span>
+					</div>
+				</div>
+				<div>
+					<label class="form-label col-1">是否置顶：</label>
+					<div class="formControls col-1" style="width: 10%;">
+						<span class="select-box"> <select class="select" id="istop"
+							name="istop">
+								<option value="true">置顶</option>
+								<option value="false" selected>不置顶</option>
 						</select>
 						</span>
 					</div>
@@ -91,7 +102,26 @@
 	<script type="text/javascript" src="js/H-ui.js"></script>
 	<script type="text/javascript" src="js/H-ui.admin.js"></script>
 	<script type="text/javascript">
-		var ue = UE.getEditor('content');
+//		var ue = UE.getEditor('content');
+		
+        var ue = new baidu.editor.ui.Editor(
+                {
+                    initialContent: "请在这里输入正文......",
+                    autoClearinitialContent: true, //focus时自动清空初始化时的内容
+                    //initialFrameWeight:100%,
+                    initialFrameHeight:350,
+                    textarea: 'content',      //设置提交时编辑器内容的名字
+
+                    autoFloatEnabled: false,
+                    focus:false,
+                    autoHeightEnabled: false,
+                    sourceEditor: true,
+                    wordCount: false,               //关闭字数统计
+                    elementPathEnabled: false,      //关闭elementPath
+                    maximumWords: 10240
+                }
+            );
+      ue.render("content");
 	</script>
 </body>
 </html>

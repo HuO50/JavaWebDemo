@@ -36,7 +36,8 @@
 				onclick="article_add('增加人员','MemberAdd')" href="javascript:;"> <i
 					class="fa fa-plus"></i> 增加人员
 			</a>
-			</span> 
+			</span> <span class="r">共有数据：<strong>${fn:length(memberlist)}</strong>条
+			</span>
 		</div>
 		<div class="mt-20">
 			<table
@@ -45,14 +46,11 @@
 					<tr class="text-c">
 						<th width="5%">ID</th>
 						<th width="45%">姓名</th>
-
 						<th width="15%">操作</th>
 					</tr>
 				</thead>
 				<tbody>
-				<!-- 学术委员 -->
-				<div>
-					<c:forEach var="member" items="${member_research_list}">
+					<c:forEach var="member" items="${memberlist}">
 						<tr class="text-c">
 							<td width="5%">${member.id }</td>
 							<td width="45%" style="text-align: center;"><a
@@ -69,51 +67,6 @@
 							</a></td>
 						</tr>
 					</c:forEach>
-					</div>
-					<!-- 本院研究员  -->
-					<div>
-					<c:forEach var="member" items="${member_inner_list}">
-						<tr class="text-c">
-							<td width="5%">${member.id }</td>
-							<td width="45%" style="text-align: center;"><a
-								style="text-decoration: none; cursor: pointer; color: black;"
-								href="javascript:void(0)"
-								onclick="layer_show('${member.name}','MemberDetail?memberid=${member.id}','800','800')">
-									${member.name }</a></td>
-							<td class="f-14 td-manage"><a style="text-decoration: none"
-								class="ml-5"
-								onClick="article_edit('人员修改','MemberModify?memberid=${member.id}')"
-								href="javascript:;" title="编辑"> <i class="fa fa-pencil"></i>
-							</a> &nbsp;&nbsp;&nbsp;&nbsp; <a style="text-decoration: none"
-								class="ml-5"
-								onClick="article_del('删除','MemberDelete?memberid=${member.id}')"
-								href="javascript:;" title="删除"> <i class="fa fa-trash"></i>
-							</a></td>
-						</tr>
-					</c:forEach>
-					</div>
-					<!-- 特聘研究员 -->
-					<div>
-					<c:forEach var="member" items="${member_outer_list}">
-						<tr class="text-c">
-							<td width="5%">${member.id }</td>
-							<td width="45%" style="text-align: center;"><a
-								style="text-decoration: none; cursor: pointer; color: black;"
-								href="javascript:void(0)"
-								onclick="layer_show('${member.name}','MemberDetail?memberid=${member.id}','800','800')">
-									${member.name }</a></td>
-							<td class="f-14 td-manage"><a style="text-decoration: none"
-								class="ml-5"
-								onClick="article_edit('人员修改','MemberModify?memberid=${member.id}')"
-								href="javascript:;" title="编辑"> <i class="fa fa-pencil"></i>
-							</a> &nbsp;&nbsp;&nbsp;&nbsp; <a style="text-decoration: none"
-								class="ml-5"
-								onClick="article_del('删除','MemberDelete?memberid=${member.id}')"
-								href="javascript:;" title="删除"> <i class="fa fa-trash"></i>
-							</a></td>
-						</tr>
-					</c:forEach>
-					</div>
 				</tbody>
 			</table>
 		</div>
@@ -126,13 +79,13 @@
 	<script type="text/javascript" src="js/H-ui.admin.js"></script>
 	<script type="text/javascript">
 		$('.table-sort').dataTable({
-			"aaSorting" : [ [ 0, "asc" ] ],//默认第几个排序
+			"aaSorting" : [ [ 0, "desc" ] ],//默认第几个排序
 			"bStateSave" : true,//状态保存
 			"aoColumnDefs" : [
 			//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
 			{
 				"orderable" : false,
-				"aTargets" : [ 1, 4 ]
+				"aTargets" : [ 1 ]
 			} // 制定列不参与排序
 			]
 		});
@@ -167,12 +120,10 @@
 		function layer_show(title, url, w, h) {
 			if (title == null || title == '') {
 				title = false;
-			}
-			;
+			};
 			if (url == null || url == '') {
 				url = "404.html";
-			}
-			;
+			};
 			var h = window.screen.availHeight - 300;
 			layer.open({
 				type : 2,

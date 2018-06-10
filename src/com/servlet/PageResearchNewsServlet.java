@@ -1,7 +1,9 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -25,7 +27,40 @@ public class PageResearchNewsServlet extends HttpServlet {
 		INewsService iNewsService = new NewsService();
 		List<News> news = iNewsService.getKindNews("学术动态");
 		Collections.reverse(news);
-		request.setAttribute("news", news);
+		//判断news是否置顶
+		//挑选置顶news
+		//根据news日期排序
+		List<News> topNews = new ArrayList<News>();
+		List<News> unTopNews = new ArrayList<News>();
+		List<News> returnNews = new ArrayList<News>();
+		for(Iterator iterator = news.iterator();iterator.hasNext();) {
+			News newsTemp = new News();
+			newsTemp = (News) iterator.next();
+			if (newsTemp.getIstop()) {
+				topNews.add(newsTemp);
+			} else {
+				unTopNews.add(newsTemp);
+			}
+		}
+		//添加sortid，进行排序
+		for(int i = 0; i < topNews.size(); i++  ) {
+			topNews.get(i).setSortid(i);
+			returnNews.add(topNews.get(i));
+		}
+		for(int i = 0; i < unTopNews.size(); i++) {
+			int j = topNews.size();
+			unTopNews.get(i).setSortid(j+i);
+			returnNews.add(unTopNews.get(i));
+		}
+		
+		for(int i = 0; i < returnNews.size(); i++) {
+			System.out.println(returnNews.get(i).toString());
+		}
+		
+		//反馈给前台jstl内容
+
+		request.setAttribute("news", returnNews);
+		
 		
 		request.getRequestDispatcher("WEB-INF/jsp/PageResearchNews.jsp").forward(request, response);
 	}
