@@ -19,7 +19,7 @@ public class DBUtil {
 		Connection conn = null;
 		String url = "jdbc:mysql://10.119.64.7:3306/work?useSSL=true";
 		try {
-			conn = DriverManager.getConnection(url, "root", "mzy6893");
+			conn = DriverManager.getConnection(url, "", "");
 		}catch (Exception e) {
 			throw new RuntimeException(e);
 		}
